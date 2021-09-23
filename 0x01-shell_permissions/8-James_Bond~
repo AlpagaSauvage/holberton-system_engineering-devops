@@ -1,2 +1,3 @@
 #!/bin/bash
-ug+0,o+rwx
+chmod 007 
+
