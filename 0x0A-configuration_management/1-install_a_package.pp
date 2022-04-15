@@ -1,4 +1,5 @@
 # Install a package
 exec { 'puppet-lint'
-  command => 'sudo apt-get install puppet-lint@2.5.0',
+  command => 'sudo gem install puppet-lint -v 2.5.0',
+  path    => ['/usr/bin'],
 }
