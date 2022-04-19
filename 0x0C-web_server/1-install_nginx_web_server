@@ -4,5 +4,5 @@
 sudo apt-get update
 sudo apt-get -y install nginx
 sudo rm /etc/nginx/sites-available/default.html
-sudo touch /etc/nginx/sites-available/default.html > echo 'Hello World\n'
+sudo touch /etc/nginx/sites-available/default.html > echo 'Hello World'
 sudo /etc/init.d/nginx restart
