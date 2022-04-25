@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Double the number of webservers
+
+sudo apt-get update
+sudo apt-get -y install nginx
+sed -i "/listen 80 default_server;/a add_header X-Served-By $(hostname);" /etc/nginx/sites-available/default
+sudo /etc/init.d/nginx restart
