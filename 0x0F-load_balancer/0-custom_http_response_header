@@ -4,7 +4,5 @@ sudo apt -y update
 sudo apt -y install nginx
 sudo rm /var/www/html/index.html
 sudo bash -c 'echo "Hello World" > /var/www/html/index.html'
-sudo  /etc/nginx/sites-available/default
-sed -i "52i\\n"
-sed -i "52i\\n\t\tadd_header X-Served-By $HOSTNAME;\n" /etc/nginx/sites-available/default
+sed -i -e "52i		add_header X-Served-By $HOSTNAME;\n" /etc/nginx/sites-available/default
 sudo /etc/init.d/nginx restart
