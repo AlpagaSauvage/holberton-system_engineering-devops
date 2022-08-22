@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# install hapoxy
+sudo apt update
+sudo apt install -y haproxy
+echo "" | sudo tee -a /etc/haproxy/haproxy.cfg
+echo "frontend frontend-base" | sudo tee -a /etc/haproxy/haproxy.cfg
+echo -e "\tbind *:80" | sudo tee -a /etc/haproxy/haproxy.cfg
+echo -e "\tdefault_backend backend-base" | sudo tee -a /etc/haproxy/haproxy.cfg
+echo -e "\toption forwardfor" | sudo tee -a /etc/haproxy/haproxy.cfg
+echo "" | sudo tee -a /etc/haproxy/haproxy.cfg
+echo "backend backend-base" | sudo tee -a /etc/haproxy/haproxy.cfg
+echo -e "\tbalance roundrobin" | sudo tee -a /etc/haproxy/haproxy.cfg
+echo -e "\tserver web-01 3.90.163.108" | sudo tee -a /etc/haproxy/haproxy.cfg
+echo -e "\tserver web-02 54.92.213.18" | sudo tee -a /etc/haproxy/haproxy.cfg
+sudo service haproxy restart
