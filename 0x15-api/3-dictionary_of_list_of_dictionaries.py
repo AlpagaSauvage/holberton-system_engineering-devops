@@ -23,8 +23,8 @@ if __name__ == "__main__":
 
         for ids in jtask:
             udict[str(user['id'])].append({"username": user['username'],
-                                              "task": ids['title'],
-                                              "completed": ids['completed']})
+                                           "task": ids['title'],
+                                           "completed": ids['completed']})
 
     file = open("todo_all_employees.json", 'w')
     json.dump(udict, file)
