@@ -10,7 +10,7 @@ if __name__ == "__main__":
     user = requests.get('https://jsonplaceholder.typicode.com/users/{}'.format
                         (id))
     tasks = requests.get('https://jsonplaceholder.typicode.com/users/{}/todos'
-                        .format(id))
+                         .format(id))
     ename = user.json()['name']
     jtask = tasks.json()
     todolist = []
